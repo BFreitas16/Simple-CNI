@@ -92,7 +92,7 @@ VERSION)
 	echo "$output"
 ;;
 *)
-  echo "Unknown cni command: $CNI_COMMAND" 
-  exit 1
+	echo "Unknown cni command: $CNI_COMMAND" 
+	exit 1
 ;;
 esac
