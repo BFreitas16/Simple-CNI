@@ -1,0 +1,14 @@
+case $CNI_COMMAND in
+ADD)
+    # Create network for container
+;;
+DEL)
+	# Cleanup everything related to container
+;;
+GET)
+	# Get the info about the container
+;;
+VERSION)
+	# Get the plugin version
+;;
+esac
