@@ -70,8 +70,8 @@ ADD)
 	# Add the IP address to the container's namespace side interface
 	ip_addr=`get_ip`
 	ip netns exec $CNI_CONTAINERID ip link set $CNI_IFNAME up
-    ip netns exec $CNI_CONTAINERID ip addr add $ip_addr/24 dev $CNI_IFNAME
-    ip netns exec $CNI_CONTAINERID ip route add default via $podcidr_gw
+	ip netns exec $CNI_CONTAINERID ip addr add $ip_addr/24 dev $CNI_IFNAME
+	ip netns exec $CNI_CONTAINERID ip route add default via $podcidr_gw
 
 	# Print the summary (contains Container Interface name, MAC address, IP address, 
 	# and the namespace attached)
