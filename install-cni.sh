@@ -68,7 +68,7 @@ jq -r '.items[].status.addresses[0].address' nodes.info.json | while read -r ip;
     echo ">>> CNI configuration: ${cni_config_file_node}"
 
     # Create the CNI folder on node
-    ssh $user@$ip 'mkdir -p /tmp/simple-cni'
+    ssh -n $user@$ip 'mkdir -p /tmp/simple-cni'
 
     # Copy all the CNI necessary files to the node
     rsync -azr . $user@$ip:/tmp/simple-cni/
@@ -77,7 +77,7 @@ jq -r '.items[].status.addresses[0].address' nodes.info.json | while read -r ip;
 
     # SSH for the user home of the <IP> host and give permissions to execute the
     # the installation scrip and run it 
-    ssh $user@$ip 'cd /tmp/simple-cni; ./install.sh'
+    ssh -n $user@$ip 'cd /tmp/simple-cni; ./install.sh'
 
     echo ">>> Executed the installation script on the node"
 done
