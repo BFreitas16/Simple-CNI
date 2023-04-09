@@ -63,7 +63,7 @@ jq -r '.items[].status.addresses[0].address' nodes.info.json | while read -r ip;
 
     # Generate the CNI configuration file
     cni_config_file_node=$(printf "${cni_config_file_template}" $podcidr_node)
-    echo $cni_config_file_node > /tmp/simple-cni/cni/simple-cni.conf
+    echo $cni_config_file_node > ./cni/simple-cni.conf
 
     echo ">>> CNI configuration: ${cni_config_file_node}"
 
